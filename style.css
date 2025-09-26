@@ -1,0 +1,222 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Doto:wght@100..900&display=swap');
+:root {
+  --main-color-green: #5AE988;
+  --main-color-brown: #885B0D;
+  --main-color-white: #EAEAEA;
+  --paragraph-size: 26px;
+  --indent: calc(100vw/14);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* margin-bottom: 24px; */
+}
+
+html {
+  font-size: 20px;
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0px 100px;
+  background-color: rgb(0, 0, 0);
+  font-family: Helvetica, sans-serif;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+body::selection {
+  background-color: #5AE988;
+  color: var(--main-color-brown);
+  font-weight: 600;
+}
+
+.top{
+  color: var(--main-color-brown);
+  font-size: 1.6rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  background-color: var(--main-color-green);
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
+  border-radius: 100%;
+  border: 1px solid var(--main-color-brown);
+}
+
+
+h1{
+  margin: 50px 0px;
+  color: var(--main-color-green);
+  font-family: Helvetica, sans-serif;
+  line-height: 1.2;
+  font-size: 4.5rem;
+  white-space: pre-line;
+  text-align: left;
+}
+
+header {
+  border-bottom: 8px solid var(--main-color-green) ;
+  margin-bottom: 40px;
+}
+
+header::after {
+  content: "";
+  width: 100vw;
+  height: 60px;
+  background: linear-gradient(180deg, #65EE71 12%, rgba(58, 136, 64, 0) 100%);
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  /* z-index: 100; */
+
+}
+
+div.intro {
+  font-size: 2rem;
+  margin-top: 50px;
+  margin-left: calc(3*var(--indent)); 
+  margin-right: calc(0*var(--indent));
+  color: white;
+  -webkit-text-stroke: 0.2px #885B0D;
+  filter: blur(0px);
+  line-height: 1.7;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+
+.intro::after {
+  content: "More people than ever are living long, healthy lives. According to the U.S. Department of Health and Human Services, the average life expectancy is 78.6 years for men and 81.1 for women. More relevant, however, is that as people grow older, their total life expectancy increases. So for those who are now 65, the average life expectancy is 83 for men and over 85 for women. And because I’m 83, I’m expected to live past 90 (but I’m aiming a lot higher than that). And these are averages, which means that perhaps half of us will live even longer.";
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(10px);
+  z-index: -2;
+  -webkit-text-stroke: 24px #8A5F14; 
+}
+
+
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--main-color-green);
+  margin-top: 150px;
+  margin-bottom: 50px;
+  margin-left: calc(2*var(--indent));
+}
+
+p {
+  font-size: var(--paragraph-size);
+  line-height: 1.8;
+  margin-inline: calc(2*var(--indent));
+  text-indent: calc(3*var(--indent));
+  color: var(--main-color-white);
+  margin-bottom: 26px;
+  font-weight: 300;
+}
+
+span.outLink {
+  display: inline;
+  background-color: #00B900;
+  border-radius: 16px;
+  color: #bfffbf;
+  padding-block: 3px;
+  /* mix-blend-mode: hard-light; */
+}
+
+
+
+aside {
+  /* font-style: italic; */
+  margin-top: 80px;
+  margin-left: 150px;
+  margin-left: calc(3*var(--indent));
+  margin-right: calc(2*var(--indent));
+  line-height: 1.6;
+  font-size: 1.5rem;
+  white-space: pre-line;
+  border-left: 4px solid #8A5F14;
+  padding-left: 20px;
+  color:#eea526;
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "ROND" 35;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+address {
+  font-style: normal;
+  font-weight: 600;
+  width: fit-content;
+  display: block;
+  white-space: pre-line;
+  line-height: 1.5;
+  /* background-color: var(--main-color-brown); */
+  padding: 10px 30px 10px 4px;
+  color: white;
+  position: relative;
+  height: 110px;
+}
+
+address::after {
+  content: "Original Article   →";
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+  padding-left: 5px;
+  padding-block: 2px;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  background-color: var(--main-color-brown);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+address:hover::after  {
+  /* width: 120%; */
+  padding-block: 5px;
+  color: var(--main-color-green);
+}
+
+footer {
+  font-size: 1rem;
+  margin-top: 100px; 
+  color: var(--main-color-green);
+  font-style: normal;
+  font-weight: 500;
+  padding-left: calc(2*var(--indent));
+  padding-right: calc(2*var(--indent));
+  padding-block: 20px;
+  line-height: 1.8;
+  position: relative;
+}
+
+footer::after {
+  content: "";
+  display: block;
+  width: 200vw;
+  height: 100%;
+  position: absolute;
+  background-color: var(--main-color-brown);
+  bottom: 0px;
+  left: -200px;
+  z-index: -1;
+  border-radius: 100px;
+}

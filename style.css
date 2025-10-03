@@ -1,10 +1,11 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Doto:wght@100..900&display=swap');
 :root {
   --main-color-green: #5AE988;
   --main-color-brown: #885B0D;
-  --main-color-white: #EAEAEA;
-  --paragraph-size: 26px;
+  --main-color-white: #e2ffe2;
+  --paragraph-size: 22px;
   --indent: calc(100vw/14);
 }
 
@@ -12,63 +13,205 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* margin-bottom: 24px; */
 }
 
 html {
-  font-size: 20px;
+  font-size: clamp(16px, 1.5vw, 24px);
   scroll-behavior: smooth;
 }
 
 body{
-  margin: 0px 100px;
-  background-color: rgb(0, 0, 0);
+  margin: 0px 5vw;
+  background-color: #3c3426;
   font-family: Helvetica, sans-serif;
   line-height: 1.2;
   font-weight: 300;
+  cursor: url('cursor.svg') 10 10, auto;
 }
 
 body::selection {
   background-color: #5AE988;
   color: var(--main-color-brown);
-  font-weight: 600;
 }
 
 .top{
   color: var(--main-color-brown);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
+  width: 3.5rem;
+  height: 3.5rem;
   position: fixed;
   background-color: var(--main-color-green);
-  bottom: 40px;
-  right: 40px;
+  bottom: 1.5rem;
+  right: 1.5rem;
   z-index: 100;
   border-radius: 100%;
-  border: 1px solid var(--main-color-brown);
+  border: 3px solid var(--main-color-brown);
 }
 
 
-h1{
-  margin: 50px 0px;
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+
+h1:first-child{
+  margin-block-start: 1.2rem;
   color: var(--main-color-green);
-  font-family: Helvetica, sans-serif;
-  line-height: 1.2;
-  font-size: 4.5rem;
+  font-family: "Boldonse", Helvetica, sans-serif;
+  line-height: 1.6;
+  font-size: clamp(2.5rem, 4vw, 4rem);
   white-space: pre-line;
   text-align: left;
+  text-align: center;
+  letter-spacing: 3px;
 }
 
-header {
-  border-bottom: 8px solid var(--main-color-green) ;
-  margin-bottom: 40px;
+section > div.author{
+  color: var(--main-color-green);
+  font-family: Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 1.4;
+  font-size: 0.8rem;
+  white-space: pre-line;
+  text-align: center;
+  letter-spacing: 3px;
+  position: relative;
+  /* top: 3rem; */
 }
 
-header::after {
+div.author > a {
+  margin-block-start: 1rem;
+  border: var(--main-color-brown) 3px solid;
+  border-radius: 25px;
+  padding: 6px 10px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--main-color-brown);
+  background-color: var(--main-color-green);
+  transition: all 0.3s ease;
+}
+
+div.author > a:hover {
+  padding: 6px 25px;
+}
+
+
+h1:nth-child(3){
+  color: var(--main-color-green);
+  font-family: "Boldonse", Helvetica, sans-serif;
+  line-height: 1.6;
+  font-size: clamp(3rem, 6.2vw, 6rem);
+  white-space: pre-line;
+  text-align: left;
+  text-align: center;
+  letter-spacing: 2px;
+  white-space: pre-line;
+  height: fit-content;
+}
+
+h1:nth-child(3) .horrifies{
+  color: #CD7B01;
+}
+
+
+h1 > span {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+h1 > span:hover {
+  color: var(--main-color-brown);
+  font-size: 4rem;
+  letter-spacing: 0.7rem;
+  filter: blur(8px);
+}
+
+
+/* blur background text */
+.author-intro {
+  position: sticky;
+  max-width: 100%;
+  bottom: -10vh;
+  text-align: left;
+  z-index: -2;
+  line-height: 1.5;
+  font-size: 4.5vw;
+  font-weight: 800;
+  /* padding-inline: 1rem; */
+  filter: blur(6px);
+  color: #30281c;
+  user-select: none;
+}
+
+.vertical-line {
+  content: "";
+  top: 0;
+  width: 2px;
+  height: 100vh;
+  background-color: var(--main-color-green);
+  position: fixed;
+  z-index: 10;
+  left: 30vw;
+}
+
+.menu-icon {
+  cursor: pointer;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
+  mix-blend-mode: difference;
+}
+
+.menu-content {
+  position: fixed;
+  width: 70%;
+  height: 100%;
+  top: 0;
+  right: -100vw;
+  background-color: var(--main-color-green);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-block: 10vh;
+  padding-inline: 4rem;
+  transition: all 0.7s ease;
+  z-index: 9;
+}
+
+.menu-content a {
+  display: block;
+  width: 80%;
+  font-size: 3vw;
+  font-weight: 600;
+  white-space: pre-line;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.menu-content a:hover {
+  color: var(--main-color-brown);
+  font-size: 3.2vw;
+}
+
+#menu:checked + .menu-icon + .menu-content {
+  right: 0;
+}
+
+/* gradient top bar */
+/* header::after {
   content: "";
   width: 100vw;
   height: 60px;
@@ -76,71 +219,142 @@ header::after {
   position: fixed;
   left: 0px;
   top: 0px;
-  /* z-index: 100; */
-
-}
+} */
 
 div.intro {
-  font-size: 2rem;
-  margin-top: 50px;
-  margin-left: calc(3*var(--indent)); 
-  margin-right: calc(0*var(--indent));
-  color: white;
-  -webkit-text-stroke: 0.2px #885B0D;
+  font-size: clamp(1.8rem, 2.1vw, 4rem);
+  font-family: "Boldonse", Helvetica, sans-serif;
+  /* margin-block: 8rem; */
+  margin-left: calc(4*var(--indent)); 
+  margin-right: calc(1*var(--indent));
+  color: var(--main-color-green);
+  /* -webkit-text-stroke: 2px #5AE988; */
+  font-weight: 600;
   filter: blur(0px);
-  line-height: 1.7;
-  margin-bottom: 100px;
+  line-height: 2.4;
   position: relative;
+  bottom: 40vh;
+}
+
+div.intro > span {
+  background-image: linear-gradient(to right, var(--main-color-brown), var(--main-color-brown));
+  background-repeat: no-repeat;
+  background-size: 0% 0.3em;
+  background-position: left bottom;
+  /* transition: all 1.2s ease; */
+  animation: underline 0.8s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 40% cover 70%;
+}
+
+@keyframes underline {
+  from {
+    background-size: 0% 0.3em;
+  }
+  to {
+    background-size: 100% 0.3em;
+  }
 }
 
 
-.intro::after {
-  content: "More people than ever are living long, healthy lives. According to the U.S. Department of Health and Human Services, the average life expectancy is 78.6 years for men and 81.1 for women. More relevant, however, is that as people grow older, their total life expectancy increases. So for those who are now 65, the average life expectancy is 83 for men and over 85 for women. And because I’m 83, I’m expected to live past 90 (but I’m aiming a lot higher than that). And these are averages, which means that perhaps half of us will live even longer.";
+
+
+/* blur background at intro */
+/* .intro::after {
+  content: "The world is designed against the elderly, writes Don Norman, 83-year-old author of the industry bible Design of Everyday Things and a former Apple VP.";
   position: absolute;
   top: 0;
   left: 0;
   filter: blur(10px);
   z-index: -2;
-  -webkit-text-stroke: 24px #8A5F14; 
-}
-
-
+  -webkit-text-stroke: 40px #5AE988; 
+} */
 
 h2 {
-  font-size: 1.8rem;
+  display: inline-block;
+  width: 22vw;
+  font-size: 2rem;
   color: var(--main-color-green);
-  margin-top: 150px;
-  margin-bottom: 50px;
-  margin-left: calc(2*var(--indent));
+  margin-left: calc(0*var(--indent));
+  position: sticky;
+  left: 0;
+  top: 3vh;
+  z-index: 5;
+}
+
+/* Green line under h2 */
+h2::after {
+  content: "";
+  display: block;
+  margin-block-start: 0.5rem;
+  width: calc(100vw - 5vw);
+  height: 2px;
+  background-color: var(--main-color-green);
+  position: sticky;
+  left: 0;
+  top: 3vh;
+  animation: underlineH2 0.8s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 15% cover 50%;
+}
+
+@keyframes underlineH2 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: calc(100vw - 5vw);
+  }
+}
+
+.content {
+  margin-block-start: 4rem;
+  position: relative;
+  box-sizing: border-box;
 }
 
 p {
   font-size: var(--paragraph-size);
   line-height: 1.8;
-  margin-inline: calc(2*var(--indent));
+  margin-inline-start: calc(4*var(--indent));
   text-indent: calc(3*var(--indent));
   color: var(--main-color-white);
   margin-bottom: 26px;
   font-weight: 300;
 }
 
-span.outLink {
+a.outLink {
   display: inline;
-  background-color: #00B900;
-  border-radius: 16px;
+  background-image: linear-gradient(to right, #00B900, #00B900);
+  background-repeat: no-repeat;
+  border-radius: 20px;
   color: #bfffbf;
   padding-block: 3px;
-  /* mix-blend-mode: hard-light; */
+  animation: outLinkAnim 0.8s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 50% cover 55%;
+  transition: all 0.3s ease;
 }
 
+a.outLink:hover {
+  padding-block: 7px;
+  border-radius: 0px;
+}
+
+@keyframes outLinkAnim {
+  from {
+    background-size: 0%;
+  }
+  to {
+    background-size: 100%;
+  }
+  }
 
 
 aside {
   /* font-style: italic; */
-  margin-top: 80px;
-  margin-left: 150px;
-  margin-left: calc(3*var(--indent));
-  margin-right: calc(2*var(--indent));
+  margin-left: calc(5*var(--indent));
+  margin-right: calc(0*var(--indent));
   line-height: 1.6;
   font-size: 1.5rem;
   white-space: pre-line;
@@ -152,6 +366,8 @@ aside {
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "ROND" 35;
+  margin-block: 2rem ;
+  z-index: -1;
 }
 
 a{
@@ -199,26 +415,15 @@ address:hover::after  {
 
 footer {
   font-size: 1rem;
-  margin-top: 100px; 
+  margin-top: 3rem; 
+  margin-bottom: 3rem;
   color: var(--main-color-green);
   font-style: normal;
   font-weight: 500;
-  padding-left: calc(2*var(--indent));
-  padding-right: calc(2*var(--indent));
+  padding-left: calc(5*var(--indent));
+  padding-right: calc(0*var(--indent));
   padding-block: 20px;
   line-height: 1.8;
   position: relative;
-}
-
-footer::after {
-  content: "";
-  display: block;
-  width: 200vw;
-  height: 100%;
-  position: absolute;
-  background-color: var(--main-color-brown);
-  bottom: 0px;
-  left: -200px;
-  z-index: -1;
-  border-radius: 100px;
+  white-space: pre-line;
 }

@@ -154,17 +154,6 @@ h1 > span:hover {
   user-select: none;
 }
 
-.vertical-line {
-  content: "";
-  top: 0;
-  width: 2px;
-  height: 100vh;
-  background-color: var(--main-color-green);
-  position: fixed;
-  z-index: 10;
-  left: 30vw;
-}
-
 .menu-icon {
   cursor: pointer;
   position: fixed;
@@ -256,6 +245,16 @@ div.intro > span {
   }
 }
 
+.vertical-line {
+  content: "";
+  top: 0;
+  width: 2px;
+  height: 100vh;
+  background-color: var(--main-color-green);
+  position: fixed;
+  z-index: 10;
+  left: 30vw;
+}
 
 
 
@@ -274,6 +273,7 @@ h2 {
   display: inline-block;
   width: 22vw;
   font-size: 2rem;
+  line-height: 1;
   color: var(--main-color-green);
   margin-left: calc(0*var(--indent));
   position: sticky;
@@ -308,7 +308,7 @@ h2::after {
 }
 
 main > section {
-  margin-block-end: 6rem;
+  margin-block-end: 3rem;
 }
 
 .content {

@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Doto:wght@100..900&display=swap');
 :root {
-  --main-color-green: #5AE988;
-  --main-color-brown: #885B0D;
-  --main-color-white: #e2ffe2;
+  --main-color-green: #33c661;
+  --main-color-brown: #835504;
+  --main-color-white: #ecffec;
   --paragraph-size: 22px;
   --indent: calc(100vw/14);
 }
@@ -22,7 +22,7 @@ html {
 
 body{
   margin: 0px 5vw;
-  background-color: #3c3426;
+  background-color: #382e1e;
   font-family: Helvetica, sans-serif;
   line-height: 1.2;
   font-weight: 300;
@@ -93,8 +93,8 @@ div.author > a {
   margin-block-start: 1rem;
   border: var(--main-color-brown) 3px solid;
   border-radius: 25px;
-  padding: 6px 10px;
-  font-weight: 500;
+  padding: 10px 12px;
+  font-weight: 600;
   font-size: 0.8rem;
   text-decoration: none;
   color: var(--main-color-brown);
@@ -103,7 +103,7 @@ div.author > a {
 }
 
 div.author > a:hover {
-  padding: 6px 25px;
+  padding: 10px 25px;
 }
 
 
